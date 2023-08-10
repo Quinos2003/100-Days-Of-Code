@@ -1,4 +1,3 @@
-// 33. Search in Rotated Sorted Array
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -17,7 +16,7 @@ public:
             }
             else if(nums[mid]<= nums[r]){
                 if(target>nums[mid]&&target<=nums[r])
-                l=r+1;
+                l=mid+1;
                 else
                 r = mid-1;
             }
