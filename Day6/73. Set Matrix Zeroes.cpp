@@ -1,26 +1,31 @@
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
-        int l =0, r= nums.size()-1;
+    void setZeroes(vector<vector<int>>& matrix) {
+        // 1. Brute Force
+        // 2 hashmaps for row and col
 
-        while(l<=r){
-            int mid = l+ (r-l)/2 ;
-            if(nums[mid]==target)
-            return mid;
-            else if(nums[l]<= nums[mid]){
 
-                if( target >= nums[l] && target < nums[mid])
-                r=mid-1;
-                else
-                l=mid+1;
-            }
-            else if(nums[mid]<= nums[r]){
-                if(target>nums[mid]&&target<=nums[r])
-                l=r+1;
-                else
-                r = mid-1;
+        int n = matrix.size();
+        int m = matrix[0].size();
+        // n x m matrix
+
+        unordered_set<int> rows;
+        unordered_set<int> cols;
+
+        for(int i =0 ; i < n ; i++){
+            for(int j=0; j<m ; j++ ){
+                if(matrix[i][j]==0){
+                    rows.insert(i);
+                    cols.insert(j);
+                }
             }
         }
-        return -1;
+        // Now we have list of i and j to set to 0 
+        for(int i =0 ; i < n ; i++){
+            for(int j=0; j<m ; j++ ){
+                if (rows.count(i) || cols.count(j)) 
+                matrix[i][j] = 0;
+            }
+        }
     }
 };
