@@ -7,7 +7,7 @@ public:
         // 3. As we get the next larger number, check the diff with it and also 
         // with the previous element and take the min.
 
-        // https://youtu.be/fCMNwd5rGc0 <-- understood by 
+        // https://youtu.be/fCMNwd5rGc0 <-- understood by this video 
 
         int ans = INT_MAX;
         set<int> s;
