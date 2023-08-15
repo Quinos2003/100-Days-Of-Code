@@ -7,7 +7,7 @@ int solution(vector<int> &arr, int X, int Y)
     int N = arr.size();
     int minsum = INT_MAX;
 
-    for (int j = 0; j < N - (X * Y); j++)
+    for (int j = 0; j < N ; j++)
     {
         int sum = 0;
         int mi = 0;
