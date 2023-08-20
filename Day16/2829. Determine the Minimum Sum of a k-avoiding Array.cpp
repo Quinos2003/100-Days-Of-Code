@@ -34,3 +34,4 @@ public:
         return sum;
     }
 };
+// Leetcode Weeky contest 359
