@@ -25,3 +25,4 @@ bool checkRange(TreeNode *root , long int max , long int min){
         return checkRange(root,LONG_MAX , LONG_MIN);
     }
 };
+// USED INT_MIN AND INT MAX BUT THERE WAS A TESTCASE OUTSIDE INT RANGE
