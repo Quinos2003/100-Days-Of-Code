@@ -1,9 +1,11 @@
-// // A Naive recursive C++ program to find minimum of coins
-// // to make a given change V
-// #include<bits/stdc++.h>
-// using namespace std;
- 
-// // m is size of coins array (number of different coins)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// A Naive recursive C++ program to find minimum of coins
+// to make a given change V
+// m is size of coins array (number of different coins)
+
 // int minCoins(int coins[], int m, int V)
 // {
 //    // base case
@@ -27,23 +29,10 @@
 //    }
 //    return res;
 // }
- 
-// // Driver program to test above function
-// int main()
-// {
-//     int coins[] =  {9, 6, 5, 1};
-//     int m = sizeof(coins)/sizeof(coins[0]);
-//     int V = 11;
-//     cout << "Minimum coins required is "
-//          << minCoins(coins, m, V);
-//     return 0;
-// }
 
 
 // A Dynamic Programming based C++ program to find minimum
 // of coins to make a given change V
-#include <bits/stdc++.h>
-using namespace std;
 
 // m is size of coins array (number of different coins)
 int minCoins(int coins[], int m, int V)
