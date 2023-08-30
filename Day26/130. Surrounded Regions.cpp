@@ -42,3 +42,39 @@ void dfs(int r , int c,vector<vector<int>>& vis,vector<vector<char>>& board ){
         }
     }
 };
+// ALternate approach to go with Bfs of each cell while keeping count and visit array changing 'O' to B then check to change 
+// class Solution {
+// public:
+// bool validPos(vector<vector<char>>& board,int r , int c ){
+//     int m = board.size();
+//     int n = board[0].size();
+//     // int r = q.front().first.first;
+//     // int c = q.front().first.second;
+//     if(r>=1 && c>=1 &&r<m-1 && c<n-1) return true;
+//     return false;
+// }
+//     void solve(vector<vector<char>>& board) {
+//         int m = board.size();
+//         int n = board[0].size();
+//         if(m<3 || n<3 ) return;
+//         queue<pair<pair<int,int>,int>>q;
+//         vector<pair<int,int>> dirs = {{0,1}, {1,0}, { -1,0}, {0,-1}};
+//         for(int i =0 ; i < m ; i ++){
+//             for ( int j =0 ; j < n ; j++){
+//                 if(board[i][j]=='O' && validPos(board,i,j))
+//                 q.push({{i,j},0});
+//             }
+//         }
+//         while(!q.empty()){
+//             int r = q.front().first.first;
+//             int c = q.front().first.second;
+//             int d = q.front().second;
+//             q.pop();
+//             for(auto it : dirs){
+//                 int nrow = r + it.first;
+//                 int ncol = c + it.second;
+//                 // if()
+//             }
+//         }
+//     }
+// };
