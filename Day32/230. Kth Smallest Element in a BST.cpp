@@ -43,5 +43,4 @@ public:
             else return INT_MIN;   
         }
     }
-
 };
