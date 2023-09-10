@@ -18,7 +18,6 @@ public:
 
             if(balance<0) return false;
         }
-
         return true;
     }
 };
