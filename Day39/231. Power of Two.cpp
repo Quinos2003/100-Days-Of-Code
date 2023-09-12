@@ -15,3 +15,5 @@ public:
     //     return (n>0)&&(1073741824%n==0);
     // }
 };
+
+// https://leetcode.com/problems/power-of-two/solutions/1638704/c-easy-to-solve-all-interview-approaches-with-detailed-explanations/
