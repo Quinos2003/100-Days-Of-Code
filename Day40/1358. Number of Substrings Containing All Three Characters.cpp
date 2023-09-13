@@ -26,3 +26,25 @@ public:
         return count;
     }
 };
+// class Solution {
+// public:
+//     int numberOfSubstrings(string s) {
+
+//         int start = 0;
+//         unordered_map<char,int> mp;
+//         int cnt = 0;
+//         int end = 0;
+//         int ans = 0;
+//         while (end < s.length()) {
+//             mp[s[end++]]++;
+
+//             while (start < s.length() && mp['a'] >= 1 && mp['b'] >= 1 && mp['c'] >= 1) {
+//             mp[s[start++]]--;
+//             cnt++;
+//             }
+
+//             ans += cnt;
+//         }
+//         return ans;
+//     }
+// };
