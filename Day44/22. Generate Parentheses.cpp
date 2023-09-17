@@ -1,6 +1,5 @@
 class Solution {
 public:
-
 void addingpar(vector<string> &v, string str, int n, int m){
     if(n==0 && m ==0){
         v.push_back(str);
