@@ -16,4 +16,3 @@ void addingpar(vector<string> &v, string str, int n, int m){
         return res;
     }
 };
-
