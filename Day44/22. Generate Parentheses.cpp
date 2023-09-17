@@ -9,7 +9,6 @@ void addingpar(vector<string> &v, string str, int n, int m){
     if(m>0) addingpar(v,str+")",n,m-1);
     if(n>0) addingpar(v,str+"(",n-1,m+1);
 }
-
     vector<string> generateParenthesis(int n) {
         vector<string> res;
         addingpar(res,"",n,0);
