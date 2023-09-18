@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     int subArray(vector<int>& nums, int k) {
         unordered_map<int,int> mp;
         int count =0, start=0,end=0;
