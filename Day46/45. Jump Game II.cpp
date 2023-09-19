@@ -12,3 +12,5 @@ public:
         return ans;
     }
 };
+
+// https://leetcode.com/problems/jump-game-ii/solutions/1192401/easy-solutions-w-explanation-optimizations-from-brute-force-to-dp-to-greedy-bfs/
