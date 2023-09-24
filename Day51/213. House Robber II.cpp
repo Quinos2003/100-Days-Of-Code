@@ -13,7 +13,6 @@ public:
         }
         return prev;
     }
-
     int rob(vector<int>& nums) {
         int n = nums.size();
         if(n<2) return nums[0];
