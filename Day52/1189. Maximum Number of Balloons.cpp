@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     int maxNumberOfBalloons(string text) {
         int b, a, l, o, n;
         b = a = l = o = n = 0;
