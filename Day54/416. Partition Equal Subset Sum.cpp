@@ -23,8 +23,8 @@ public:
             for (int target = 1; target <= k; target++) {
                 bool notTaken = prev[target];
                 bool taken = false;
-                if (nums[ind] <= target)
-                    taken = prev[target - nums[ind]];
+                
+                if (nums[ind] <= target)  taken = prev[target - nums[ind]];
 
                 cur[target] = notTaken || taken;
             }
