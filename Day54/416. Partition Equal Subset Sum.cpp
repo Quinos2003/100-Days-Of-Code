@@ -31,6 +31,6 @@ public:
             prev = cur;
         }
         return prev[k];
-    }
+        }
     }
 };
