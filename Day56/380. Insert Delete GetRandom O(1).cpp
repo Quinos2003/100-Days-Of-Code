@@ -28,3 +28,48 @@ public:
         return arr[rand() % arr.size()];
     }
 };
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * RandomizedSet* obj = new RandomizedSet();
+ * bool param_1 = obj->insert(val);
+ * bool param_2 = obj->remove(val);
+ * int param_3 = obj->getRandom();
+ */
+// class RandomizedSet {
+// public:
+// vector<int> randomSet;
+//     RandomizedSet() {
+//         ios_base::sync_with_stdio(false); 
+//     }
+    
+//     bool insert(int val) {
+//         if(find(randomSet.begin(),randomSet.end(),val) == randomSet.end()){
+//             randomSet.push_back(val);
+//             return true;
+//         }
+//         else
+//             return false;
+//     }
+    
+//     bool remove(int val) {
+//         auto it = find(randomSet.begin(),randomSet.end(),val);
+//         if(it != randomSet.end()){
+//             randomSet.erase(it);
+//             return true;
+//         }
+//         else return false;
+//     }
+    
+//     int getRandom() {
+//         return randomSet[rand()%randomSet.size()];
+//     }
+// };
+
+// /**
+//  * Your RandomizedSet object will be instantiated and called as such:
+//  * RandomizedSet* obj = new RandomizedSet();
+//  * bool param_1 = obj->insert(val);
+//  * bool param_2 = obj->remove(val);
+//  * int param_3 = obj->getRandom();
+//  */
