@@ -1,7 +1,8 @@
 class RandomizedSet {
 public:
-unordered_map<int, int> mp;
-vector<int> arr;
+    unordered_map<int, int> mp;
+    vector<int> arr;
+
     RandomizedSet() {
         return;
     }
@@ -11,7 +12,6 @@ vector<int> arr;
         mp[val] = arr.size() - 1;
         return true;
     }
-    
     bool remove(int val) {
         if(mp.count(val)){
             int idx = mp[val];
@@ -24,7 +24,6 @@ vector<int> arr;
         }
         return false;
     }
-    
     int getRandom() {
         return arr[rand() % arr.size()];
     }
