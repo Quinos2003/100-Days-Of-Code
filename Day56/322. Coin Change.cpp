@@ -3,8 +3,9 @@ public:
 
     int coinChange(vector<int>& coins, int n) {
         // cout<<n<<n+1;
-        n=n+1;
-        int dp[n+1];
+        // n=n+1;
+        // int dp[n+1];
+        int dp[++n];
         // cout<<n<<++n;
         dp[0]=0;
         sort(coins.begin(), coins.end());
