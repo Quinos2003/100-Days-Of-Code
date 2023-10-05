@@ -1,33 +1,58 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
-// TABULATION APPROACH
-int maxProfit(int k, vector<int>& prices) {
+// SPACE OPTIMIZATION 
+int maxProfit( int k, vector<int>& prices) {
     int n = prices.size();
-    // Creating a 3D DP prices arr of size [n+1][2][k+1] initialized to 0
-    vector<vector<vector<int>>> dp(n + 1,
-                                    vector<vector<int>>(2, vector<int>(k + 1, 0)));
+    // Create two prices aRRays, 'ahead' and 'cur', to track the maximum profit at each step
+    vector<vector<int>> ahead(2, vector<int>(k + 1, 0));
+    vector<vector<int>> cur(2, vector<int>(k + 1, 0));
 
-    // Loop through the stock prices from the end to the beginning
     for (int ind = n - 1; ind >= 0; ind--) {
         for (int buy = 0; buy <= 1; buy++) {
             for (int cap = 1; cap <= k; cap++) {
                 if (buy == 0) { // We can buy the stock
-                    dp[ind][buy][cap] = max(0 + dp[ind + 1][0][cap],
-                                -prices[ind] + dp[ind + 1][1][cap]);
+                    cur[buy][cap] = max(0 + ahead[0][cap],-prices[ind] + ahead[1][cap]);
                 }
 
                 if (buy == 1) { // We can sell the stock
-                    dp[ind][buy][cap] = max(0 + dp[ind + 1][1][cap],
-                                prices[ind] + dp[ind + 1][0][cap - 1]);
+                    cur[buy][cap] = max(0 + ahead[1][cap],prices[ind] + ahead[0][cap - 1]);
                 }
             }
         }
+        // Update the 'ahead' pricesay with the current values
+        ahead = cur;
     }
 
-    return dp[0][0][k];
+    return ahead[0][k];
 }
+
+// TABULATION APPROACH
+// int maxProfit(int k, vector<int>& prices) {
+//     int n = prices.size();
+//     // Creating a 3D DP prices arr of size [n+1][2][k+1] initialized to 0
+//     vector<vector<vector<int>>> dp(n + 1,
+//                                     vector<vector<int>>(2, vector<int>(k + 1, 0)));
+
+//     // Loop through the stock prices from the end to the beginning
+//     for (int ind = n - 1; ind >= 0; ind--) {
+//         for (int buy = 0; buy <= 1; buy++) {
+//             for (int cap = 1; cap <= k; cap++) {
+//                 if (buy == 0) { // We can buy the stock
+//                     dp[ind][buy][cap] = max(0 + dp[ind + 1][0][cap],
+//                                 -prices[ind] + dp[ind + 1][1][cap]);
+//                 }
+
+//                 if (buy == 1) { // We can sell the stock
+//                     dp[ind][buy][cap] = max(0 + dp[ind + 1][1][cap],
+//                                 prices[ind] + dp[ind + 1][0][cap - 1]);
+//                 }
+//             }
+//         }
+//     }
+
+//     return dp[0][0][k];
+// }
 
 // MEMOIZATION APPROACH
 // int solve(vector<int>& prices, int n, int ind, int buy, int cap, vector<vector<vector<int>>>& dp) {
