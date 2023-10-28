@@ -39,7 +39,6 @@ class Solution{
          // Code here
         //  int found =0;
          vector<int> ans;
-         
          traverse(root , target , ans);
         //  ans.push_back(root->data);
         //  reverse(ans.begin(), ans.end());
