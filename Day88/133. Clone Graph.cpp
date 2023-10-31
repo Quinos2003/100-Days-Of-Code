@@ -19,26 +19,45 @@ public:
 };
 */
 
+// class Solution {
+// public:
+// unordered_map<Node* , Node*> mp;
+//     Node* cloneGraph(Node* node) {
+//         if(node==NULL) return NULL;
+//         Node* first = new Node(node -> val, {}); 
+//         mp[node]=first;
+
+//         queue<Node*> q;
+//         q.push(node);
+
+//         while(!q.empty()){
+//             Node* temp = q.front();
+//             q.pop();
+//             for(auto it : temp->neighbors){
+//                 if(mp.find(it)==mp.end()){
+//                     mp[it] = new Node(it->val,{});
+//                     q.push(it);
+//                 }
+//                 mp[temp]->neighbors.push_back(mp[it]);
+//             }
+//         }
+//         return mp[node];
+//     }
+// };
+
 class Solution {
 public:
-unordered_map<Node* , Node*> mp;
+    unordered_map<Node* , Node*> mp;
+    
     Node* cloneGraph(Node* node) {
-        if(node==NULL) return NULL;
-        Node* first = new Node(node -> val, {}); 
-        mp[node]=first;
+        if(node == NULL) return NULL;
 
-        queue<Node*> q;
-        q.push(node);
-
-        while(!q.empty()){
-            Node* temp = q.front();
-            q.pop();
-            for(auto it : temp->neighbors){
-                if(mp.find(it)==mp.end()){
-                    mp[it] = new Node(it->val,{});
-                    q.push(it);
-                }
-                mp[temp]->neighbors.push_back(mp[it]);
+        if(mp.find(node) == mp.end()){
+            mp[node] = new Node(node -> val, {}); 
+            
+            for(auto it: node -> neighbors) 
+            {
+                mp[node] -> neighbors.push_back(cloneGraph(it)); 
             }
         }
         return mp[node];
