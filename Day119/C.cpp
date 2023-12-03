@@ -70,7 +70,7 @@
 //     return 0;
 // }
 
-
+// Random guy solution, couldn't solve within contest time
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
